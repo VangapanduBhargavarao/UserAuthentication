@@ -1,0 +1,9 @@
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit">SignUp</button>
+</form>
+<p>Already havre an account?<a href="{% url 'login' %}">Login here</a></p>
+
+

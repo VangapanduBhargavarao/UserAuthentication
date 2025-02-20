@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="dashboard">
+        <h2>Welcome, {{ user.first_name }}</h2>
+        <img src="{{ user.profile_picture.url }}" width="150">
+        <p>Email: {{ user.email }}</p>
+        <p>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }}, {{ user.pincode }}</p>
+        <a href="{% url 'logout' %}">Logout</a>
+
+    </div>
+</body>
+</html>
